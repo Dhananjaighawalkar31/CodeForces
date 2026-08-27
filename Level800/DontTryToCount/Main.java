@@ -26,7 +26,7 @@ public class Main {
     	}
 
         int i = 0;
-        while(i<m*n) {
+        while(x.length()<=m+n) {
         	x = x + x;
         	i++;
         	if(x.contains(s)) {
