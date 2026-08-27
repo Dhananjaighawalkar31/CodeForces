@@ -21,9 +21,19 @@ public class Main {
     }
 
     public static int solve(int n, int m, String x, String s) {
+    	if(x.contains(s)) {
+    		return 0;
+    	}
 
-        // your logic here
+        int i = 0;
+        while(i<m*n) {
+        	x = x + x;
+        	i++;
+        	if(x.contains(s)) {
+        		return i;
+        	}
+        }
 
-        return 0;
+        return -1;
     }
 }
