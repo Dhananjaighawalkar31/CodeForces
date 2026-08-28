@@ -10,16 +10,40 @@ public class Main {
 
         while (t-- > 0) {
 
-            // read 10 x 10 grid
+            char[][] grid = new char[10][10];
 
-            System.out.println(solve(/* grid */));
+            for (int i = 0; i < 10; i++) {
+                String row = sc.next();
+
+                for (int j = 0; j < 10; j++) {
+                    grid[i][j] = row.charAt(j);
+                }
+            }
+
+            System.out.println(solve(grid));
         }
     }
 
-    public static int solve(/* grid */) {
+    public static int solve(char[][] grid) {
 
-        // your logic
+        int score = 0;
 
-        return 0;
+        for (int i = 0; i < 10; i++) {
+
+            for (int j = 0; j < 10; j++) {
+
+                if (grid[i][j] == 'X') {
+
+                    int ring = Math.min(
+                        Math.min(i, 9 - i),
+                        Math.min(j, 9 - j)
+                    ) + 1;
+
+                    score += ring;
+                }
+            }
+        }
+
+        return score;
     }
 }
