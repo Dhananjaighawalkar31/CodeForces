@@ -25,8 +25,12 @@ public class Main {
 
     public static String solve(int n, int k, int[] arr) {
 
-        // your logic
+        for(int num : arr) {
+        	if(num == k) {
+        		return "YES";
+        	}
+        }
 
-        return "";
+        return "NO";
     }
 }
