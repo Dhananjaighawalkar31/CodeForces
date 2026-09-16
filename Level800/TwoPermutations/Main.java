@@ -26,7 +26,7 @@ public class Main {
             return "Yes";
         }
 
-        if (a + b < n) {
+        if (a + b <= n - 2) {
             return "Yes";
         }
 
